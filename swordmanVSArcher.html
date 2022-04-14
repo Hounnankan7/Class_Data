@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playing Around 2 </title>
+    <meta name="description" content="A simple HTML5 and data projects.">
+    <meta name="hounnankan_prince_donald" content="Data about a game">
+
+   <!-- <link rel="stylesheet" href="css/stylesheet1.css"> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>    <!--Integration de Chart.js-->
+</head>
+
+
+<body>
+
+
+    <div>
+        <!--Creation du graphique-->
+        <div style="display: inline;">
+            <button class="0"><a href="accueil.html">Accueil</a></button>
+            <button class="1"><a href="swordmanVSSpearman.html">Swordman VS Spearman</a></button>
+            <button class="2"><a href="swordmanVSNinja.html">Swordman VS Ninja</a></button>
+            <button class="3"><a href="swordmanVSArcher.html">Swordman VS Archer</a></button>
+            <button class="4"><a href="swordmanVSGunner.html">Swordman VS Gunner</a></button>
+            <button class="5"><a href="swordmanVSArtificier.html">Swordman VS Artificier</a></button>
+            <button class="6"><a href="swordmanVSExorcist.html">Swordman VS Exorcist</a></button>
+        </div>
+        <div class="chart" style=" width: 40%; height: 40%; margin: 0; padding: 0;">
+            <canvas id="myChart"></canvas>
+        </div>
+        
+        <script>
+            Chart.defaults.plugins.title.display = true;
+            Chart.defaults.plugins.title.text = 'PAS DE TITRE';
+        </script>
+
+        <script>
+            const data = {
+                labels: [
+                    'Health Point',
+                    'Technical Point',
+                    'Attack Point',
+                    'Defense Point',
+                    'Agility Point',
+                    'Karma Point'
+                ],
+                datasets: [{
+                    label: 'Swordman Stats',
+                    data: [4, 0, 0, 0, 0, 0],
+                    fill: true,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    pointBackgroundColor: 'rgb(255, 99, 132)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(255, 99, 132)'
+                }, {
+                    label: 'Archer Stats',
+                    data: [, 0, 5, 0, 0, 0],
+                    fill: true,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgb(54, 162, 235)',
+                    pointBackgroundColor: 'rgb(54, 162, 235)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(54, 162, 235)'
+                }]
+            };
+        
+            const config = {
+                type: 'radar',
+                data: data,
+                options: {
+                    elements: {
+                    line: {
+                        borderWidth: 3
+                    }
+                    },
+
+                    plugins: {
+                        title: {
+                            text : "COMPARAISON DE DEUX CLASSES"
+                        }
+                    }
+                },
+                
+            };
+
+
+            const myChart = new Chart(
+                document.getElementById('myChart'),
+                config
+            );
+        </script>
+
+
+    </div>
+
+</body>
+
+
+</html>
