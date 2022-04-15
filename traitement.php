@@ -12,6 +12,7 @@
    <!-- <link rel="stylesheet" href="css/stylesheet1.css"> -->
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>    <!--Integration de Chart.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js">//Telechargement de la bibliothèque</script>
 </head>
 
 
@@ -168,15 +169,31 @@
         }
     ?>
 
+    <button class="0"><a href="index.php">Accueil</a></button>
 
     <div>
-         
-        <button class="0"><a href="index.php">Accueil</a></button>
 
         
-        <!--Creation du graphique-->
-        <div class="chart" style=" width: 40%; height: 40%; margin: 0; padding: 0;">
-            <canvas id="myChart"></canvas>
+        <div class="all_chart" style="display: inline-flex; width: 90%; height: 90%;">
+            <!--Creation du graphique 1-->
+            <div class="chart" style=" width: 40%; height: 40%; margin: 0; padding: 0;">
+                <canvas id="myChart"></canvas>
+            </div>
+
+            <div class="horizontal_chart" style=" width: 30%; height: 30%; margin-top: 50px; padding: 0; display: block; margin-left: 100px;">
+
+                <!--Creation du graphique 2-->
+                <div class="chart1">
+                <canvas id="myChart1"></canvas>
+                </div>
+
+                <!--Creation du graphique 3-->
+                <div class="chart2">
+                <canvas id="myChart2"></canvas>
+                </div>
+
+            </div>
+
         </div>
         
         <script>
@@ -221,6 +238,7 @@
                 type: 'radar',
                 data: data,
                 options: {
+
                     elements: {
                     line: {
                         borderWidth: 3
@@ -230,6 +248,16 @@
                     plugins: {
                         title: {
                             text : "COMPARAISON DE DEUX CLASSES"
+                        }
+                    },
+
+                    scale: {
+                        angleLines: {
+                            display: true
+                        },
+                        ticks: {
+                            suggestedMin: 10,
+                            suggestedMax: 100
                         }
                     }
                 },
@@ -241,6 +269,66 @@
                 document.getElementById('myChart'),
                 config
             );
+        </script>
+
+        <script>
+            var ctx = document.getElementById('myChart1').getContext('2d');
+            var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'horizontalBar',
+
+            // The data for our dataset
+            data: {
+                    labels: ["Health Point",
+                            "Technical Point",
+                            "Attack Point",
+                            "Defense Point",
+                            "Agility Point",
+                            "Karma Point"],
+
+                    datasets: [{
+                    label: '<?=$class1?>',
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: ['<?=$health_point1?>', '<?=$technical_point1?>', '<?=$attack_point1?>', '<?=$defense_point1?>', '<?=$agility_point1?>', '<?=$karma_point1?>'],
+                }]
+                },
+                // Configuration options go here
+                options: {
+
+                }
+
+            });
+        </script>
+
+        <script>
+            var ctx = document.getElementById('myChart2').getContext('2d');
+            var chart2 = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'horizontalBar',
+
+            // The data for our dataset
+            data: {
+                    labels: ["Health Point",
+                            "Technical Point",
+                            "Attack Point",
+                            "Defense Point",
+                            "Agility Point",
+                            "Karma Point"],
+
+                    datasets: [{
+                    label: '<?=$class2?>',
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgb(54, 162, 235)',
+                    data: ['<?=$health_point2?>', '<?=$technical_point2?>', '<?=$attack_point2?>', '<?=$defense_point2?>', '<?=$agility_point2?>', '<?=$karma_point2?>'],
+                }]
+                },
+                // Configuration options go here
+                options: {
+
+                }
+
+            });
         </script>
 
 
