@@ -55,27 +55,41 @@
             </form>
         
 
-        <div class="all_chart" style="display: inline-flex; width: 90%; height: 90%;">
-            <!--Creation du graphique 1-->
-            <div class="chart" style=" width: 40%; height: 40%; margin: 0; padding: 0;">
-                <canvas id="myChart"></canvas>
-            </div>
+            <div>
 
-            <div class="horizontal_chart" style=" width: 30%; height: 30%; margin-top: 50px; padding: 0; display: block; margin-left: 100px;">
-
-                <!--Creation du graphique 2-->
-                <div class="chart1">
-                <canvas id="myChart1"></canvas>
+                <div class="radar_chart" style="width: 100%; height: 100%; flex: 0;">
+                    <!--Creation du graphique 1-->
+                    <div class="chart" style=" width: 30%; height: 30%; margin: 0; padding: 0;">
+                        <canvas id="myChart"></canvas>
+                    </div>
+        
                 </div>
-
-                <!--Creation du graphique 3-->
-                <div class="chart2">
-                <canvas id="myChart2"></canvas>
+                
+                
+                
+                <div style="display: flex;">
+                    <!--Creation du graphique 2-->
+                    <div style="flex: 0.1; width: 40%; height: 40%; padding-top: 2%;">
+                        <img src='<?=$image1?>' class = "image_1"/>
+                    </div>
+                    
+                    <div class="chart1" style="width: 35%; height: 35%; flex: 0; margin-left: 10px ;">
+                        <canvas id="myChart1"></canvas>
+                    </div>
                 </div>
-
+                
+                <div style="display: flex">
+                    <!--Creation du graphique 3-->
+                    <div style="flex: 0.1; width: 40%; height: 40%; padding-top: 2%;">
+                        <img src='<?=$image2?>' class = "image_2"/>
+                    </div>
+        
+                    <div class="chart2" style="width: 35%; height: 35%; flex: 0; margin-left: 10px ;">
+                        <canvas id="myChart2"></canvas>
+                    </div>
+                </div>
+        
             </div>
-
-        </div>
 
         
         <script>

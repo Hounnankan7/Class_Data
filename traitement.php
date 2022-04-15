@@ -24,6 +24,7 @@
 
     <?php 
         //character 1 stats
+        $image1 = "";
         $health_point1 = 0;
         $technical_point1 =0;
         $attack_point1 = 0;
@@ -32,6 +33,7 @@
         $karma_point1 =0;
 
         //character 2 stats
+        $image2 = "";
         $health_point2 = 0;
         $technical_point2 =0;
         $attack_point2 = 0;
@@ -41,6 +43,7 @@
 
         if ($_POST['character1'] == 'swordman1') {
             $class1 = 'Swordman';
+            $image1 = "images/Swordman.png";
             $health_point1 = 80;
             $technical_point1 =50;
             $attack_point1 = 50;
@@ -50,6 +53,7 @@
         }
         elseif ($_POST['character1'] == 'spearman1') {
             $class1 = 'Spearman';
+            $image1 = "images/Spearman.png";
             $health_point1 = 80;
             $technical_point1 =50;
             $attack_point1 = 50;
@@ -59,6 +63,7 @@
         }
         elseif ($_POST['character1'] == 'ninja1') {
             $class1 = 'Ninja';
+            $image1 = "images/Ninja.png";
             $health_point1 = 80;
             $technical_point1 =50;
             $attack_point1 = 50;
@@ -68,6 +73,7 @@
         }
         elseif ($_POST['character1'] == 'archer1') {
             $class1 = 'Archer';
+            $image1 = "images/Archer.png";
             $health_point1 = 80;
             $technical_point1 =50;
             $attack_point1 = 50;
@@ -77,6 +83,7 @@
         }
         elseif ($_POST['character1'] == 'gunner1') {
             $class1 = 'Gunner';
+            $image1 = "images/Gunner.png";
             $health_point1 = 80;
             $technical_point1 =50;
             $attack_point1 = 50;
@@ -86,6 +93,7 @@
         }
         elseif ($_POST['character1'] == 'artificier1') {
             $class1 = 'Artificier';
+            $image1 = "images/Artificier.png";
             $health_point1 = 80;
             $technical_point1 =50;
             $attack_point1 = 50;
@@ -95,6 +103,7 @@
         }
         elseif ($_POST['character1'] == 'exorcist1') {
             $class1 = 'Exorcist';
+            $image1 = "images/Exorcist.png";
             $health_point1 = 80;
             $technical_point1 =50;
             $attack_point1 = 50;
@@ -106,6 +115,7 @@
 
         if ($_POST['character2'] == 'swordman2') {
             $class2 = 'Swordman';
+            $image2 = "images/Swordman.png";
             $health_point2 = 80;
             $technical_point2 =50;
             $attack_point2 = 50;
@@ -115,6 +125,7 @@
         }
         elseif ($_POST['character2'] == 'spearman2') {
             $class2 = 'Spearman';
+            $image2 = "images/Spearman.png";
             $health_point2 = 80;
             $technical_point2 =50;
             $attack_point2 = 50;
@@ -124,6 +135,7 @@
         }
         elseif ($_POST['character2'] == 'ninja2') {
             $class2 = 'Ninja';
+            $image2 = "images/Ninja.png";
             $health_point2 = 80;
             $technical_point2 =50;
             $attack_point2 = 50;
@@ -133,6 +145,7 @@
         }
         elseif ($_POST['character2'] == 'archer2') {
             $class2 = 'Archer';
+            $image2 = "images/Archer.png";
             $health_point2 = 80;
             $technical_point2 =50;
             $attack_point2 = 50;
@@ -142,6 +155,7 @@
         }
         elseif ($_POST['character2'] == 'gunner2') {
             $class2 = 'Gunner';
+            $image2 = "images/Gunner.png";
             $health_point2 = 80;
             $technical_point2 =50;
             $attack_point2 = 50;
@@ -151,6 +165,7 @@
         }
         elseif ($_POST['character2'] == 'artificier2') {
             $class2 = 'Artificier';
+            $image2 = "images/Artificier.png";
             $health_point2 = 80;
             $technical_point2 =50;
             $attack_point2 = 50;
@@ -160,6 +175,7 @@
         }
         elseif ($_POST['character2'] == 'exorcist2') {
             $class2 = 'Exorcist';
+            $image2 = "images/Exorcist.png";
             $health_point2 = 80;
             $technical_point2 =50;
             $attack_point2 = 50;
@@ -171,31 +187,48 @@
 
     <button class="0"><a href="index.php">Accueil</a></button>
 
+    
     <div>
 
-        
-        <div class="all_chart" style="display: inline-flex; width: 90%; height: 90%;">
+        <div class="radar_chart" style="width: 100%; height: 100%; flex: 0;">
             <!--Creation du graphique 1-->
-            <div class="chart" style=" width: 40%; height: 40%; margin: 0; padding: 0;">
+            <div class="chart" style=" width: 30%; height: 30%; margin: 0; padding: 0;">
                 <canvas id="myChart"></canvas>
-            </div>
-
-            <div class="horizontal_chart" style=" width: 30%; height: 30%; margin-top: 50px; padding: 0; display: block; margin-left: 100px;">
-
-                <!--Creation du graphique 2-->
-                <div class="chart1">
-                <canvas id="myChart1"></canvas>
-                </div>
-
-                <!--Creation du graphique 3-->
-                <div class="chart2">
-                <canvas id="myChart2"></canvas>
-                </div>
-
             </div>
 
         </div>
         
+        
+        
+        <div style="display: flex;">
+            <!--Creation du graphique 2-->
+            <div style="flex: 0.1; width: 40%; height: 40%; padding-top: 2%;">
+                <img src='<?=$image1?>' class = "image_1"/>
+            </div>
+            
+            <div class="chart1" style="width: 35%; height: 35%; flex: 0; margin-left: 10px ;">
+                <canvas id="myChart1"></canvas>
+            </div>
+        </div>
+        
+        <div style="display: flex">
+            <!--Creation du graphique 3-->
+            <div style="flex: 0.1; width: 40%; height: 40%; padding-top: 2%;">
+                <img src='<?=$image2?>' class = "image_2"/>
+            </div>
+
+            <div class="chart2" style="width: 35%; height: 35%; flex: 0; margin-left: 10px ;">
+                <canvas id="myChart2"></canvas>
+            </div>
+        </div>
+
+    </div>
+
+        
+        
+          
+      
+
         <script>
             Chart.defaults.plugins.title.display = true;
             Chart.defaults.plugins.title.text = 'PAS DE TITRE';
