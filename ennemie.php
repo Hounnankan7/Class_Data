@@ -9,7 +9,7 @@
     <meta name="description" content="A simple HTML5 and data projects.">
     <meta name="hounnankan_prince_donald" content="Data about a game">
 
-   <!-- <link rel="stylesheet" href="css/stylesheet1.css"> -->
+    <link rel="stylesheet" href="css/stylesheet2.css">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>    <!--Integration de Chart.js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js">//Telechargement de la bibliothèque</script>
@@ -22,9 +22,11 @@
 
     </header>
 
-    <button class="01"><a href="index.php">Accueil</a></button>
-    <button class="02"><a href="personnage.php">Character</a></button>
-    <button class="03"><a href="ennemie.php">Ennemies</a></button>
+    <div class="bouton_all">
+        <button class="bouton1"><a href="index.php">Accueil</a></button>
+        <button class="bouton2"><a href="personnage.php">Character</a></button>
+        <button class="bouton3"><a href="ennemie.php">Ennemies</a></button>
+    </div>
 
     
 

@@ -1,6 +1,139 @@
-#mychart {
-  width: 100%;
-  height: 100%;
+
+html {
   margin: 0;
   padding: 0;
+}
+
+
+
+/*Les boutons*/
+.bouton_all{
+  
+}
+
+.bouton1 {
+  
+}
+
+.bouton2 {
+
+}
+
+.bouton3 {
+
+}
+
+/*Formulaire*/
+.formulaire_title{
+  margin: 30px; 
+  margin-left: 0px;
+  margin-bottom: 0px;
+  
+}
+
+.formulaire_all{
+  display: inline-flex;
+  
+}
+
+/*Divers*/
+.image_class{
+  flex: 0.1; 
+  width: 40%; 
+  height: 40%; 
+  padding-top: 2%;
+}
+
+/*Graphes personnage*/
+.radar_chart{
+  width: 100%; 
+  height: 100%; 
+  flex: 0;
+}
+
+.chart{
+  width: 30%; 
+  height: 30%; 
+  margin: 0; 
+  padding: 0;
+}
+
+.chart1{
+  width: 35%; 
+  height: 35%; 
+  flex: 0; 
+  margin-left: 10px ;
+}
+
+.horizontal_bar{
+  display: flex;
+}
+
+
+
+@media screen and (max-device-width: 1480px) {
+  
+}
+
+@media screen and (max-device-width: 480px) {
+
+  /*Formulaire*/
+.formulaire_title{
+  margin: 30px; 
+  margin-left: 0px;
+  margin-bottom: 0px;
+}
+
+.formulaire_all{
+  display: inline-flex;
+}
+
+.hr_1{
+  border: none;
+  border-left: 1px solid hsla(200, 10%, 50%,100);
+  height: 210px;
+  width: 2px;
+  color: black;
+}
+
+.hr_2{
+  border: none;
+  border-left: 1px solid hsla(200, 10%, 50%,100);
+  height: 2px;
+  width: 210px;
+  color: black;
+}
+
+/*Divers*/
+.image_class{
+  flex: 0.1; 
+  width: 20%; 
+  height: 20%; 
+  padding-top: 2%;
+}
+
+/*Graphes personnage*/
+.radar_chart{
+  
+  flex: 0;
+}
+
+.chart{
+  width: 100%; 
+  height: 100%; 
+  margin: 0; 
+  padding: 0;
+}
+
+.chart1{
+  width: 75%; 
+  height: 75%; 
+  flex: 0; 
+  margin-left: 10px ;
+}
+
+.horizontal_bar{
+  display: flex;
+}
+  
 }

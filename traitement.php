@@ -9,7 +9,7 @@
     <meta name="description" content="A simple HTML5 and data projects.">
     <meta name="hounnankan_prince_donald" content="Data about a game">
 
-   <!-- <link rel="stylesheet" href="css/stylesheet1.css"> -->
+    <link rel="stylesheet" href="css/stylesheet2.css">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>    <!--Integration de Chart.js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js">//Telechargement de la bibliothèque</script>
@@ -185,51 +185,49 @@
         }
     ?>
 
-    <button class="01"><a href="index.php">Accueil</a></button>
-    <button class="02"><a href="personnage.php">Character</a></button>
-    <button class="03"><a href="ennemie.php">Ennemies</a></button>
+    <div class="bouton_all">
+        <button class="bouton1"><a href="index.php">Accueil</a></button>
+        <button class="bouton2"><a href="personnage.php">Character</a></button>
+        <button class="bouton3"><a href="ennemie.php">Ennemies</a></button>
+    </div>
 
     
     <div>
 
-        <div class="radar_chart" style="width: 100%; height: 100%; flex: 0;">
+        <div class="radar_chart">
             <!--Creation du graphique 1-->
-            <div class="chart" style=" width: 30%; height: 30%; margin: 0; padding: 0;">
+            <div class="chart">
                 <canvas id="myChart"></canvas>
             </div>
 
         </div>
         
+        <hr class="hr_2">
         
-        
-        <div style="display: flex;">
+        <div class="horizontal_bar">
             <!--Creation du graphique 2-->
-            <div style="flex: 0.1; width: 40%; height: 40%; padding-top: 2%;">
+            <div class="image_class">
                 <img src='<?=$image1?>' class = "image_1"/>
             </div>
             
-            <div class="chart1" style="width: 35%; height: 35%; flex: 0; margin-left: 10px ;">
+            <div class="chart1">
                 <canvas id="myChart1"></canvas>
             </div>
         </div>
         
-        <div style="display: flex">
+        <div class="horizontal_bar">
             <!--Creation du graphique 3-->
-            <div style="flex: 0.1; width: 40%; height: 40%; padding-top: 2%;">
+            <div class="image_class">
                 <img src='<?=$image2?>' class = "image_2"/>
             </div>
 
-            <div class="chart2" style="width: 35%; height: 35%; flex: 0; margin-left: 10px ;">
+            <div class="chart1">
                 <canvas id="myChart2"></canvas>
             </div>
         </div>
 
     </div>
 
-        
-        
-          
-      
 
         <script>
             Chart.defaults.plugins.title.display = true;
