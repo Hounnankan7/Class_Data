@@ -28,6 +28,22 @@
         <button class="bouton3"><a href="ennemie.php">Ennemies</a></button>
     </div>
 
+    <!-- FORMULAIRE -->
+    <h3 class="formulaire_title"> CHOOSE THE ENNEMIE YOU WANT TO SEE</h3>
+    <form method="post" action="traitement2.php">
+        <div class="formulaire_all">
+            <p style="margin-right: 20px;">
+                <input list="ennemie" name="ennemie">
+                <datalist id="ennemie">
+                    <option value="Kenshin Uesugi">
+                    <option value="Motochika Chosokabe">
+                    <option value="Nagamasa Azai">
+                        <option value="Oda Nobunaga">
+                </datalist>
+            </p>
+        </div>
+        <p><input type="submit" value="See Information" /></p>
+    </form>
     
 
 </body>

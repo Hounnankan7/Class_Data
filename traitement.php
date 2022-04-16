@@ -22,7 +22,21 @@
 
     </header>
 
+
     <?php 
+
+        try {
+            // Souvent on identifie cet objet par la variable $conn ou $db
+            $mysqlConnection = new PDO('mysql:host=localhost:8889;dbname=game_db;charset=utf8','root','root');
+
+        }
+        catch(Exception $e)
+        {
+            // En cas d'erreur, on affiche un message et on arrête tout
+                die('Erreur : '.$e->getMessage());
+        }
+
+
         //character 1 stats
         $image1 = "";
         $health_point1 = 0;
@@ -42,146 +56,262 @@
         $karma_point2 =0;
 
         if ($_POST['character1'] == 'swordman1') {
-            $class1 = 'Swordman';
-            $image1 = "images/Swordman.png";
-            $health_point1 = 80;
-            $technical_point1 =50;
-            $attack_point1 = 50;
-            $defense_point1 =60;
-            $agility_point1 =80;
-            $karma_point1 =100;
+
+            $health_statement1 = $mysqlConnection->prepare('SELECT * FROM `class_data` WHERE `id`=1');
+            $health_statement1->execute();
+            $a = $health_statement1->fetchAll();
+
+            // On affiche chaque recette une à une
+            foreach ($a as $a) {
+        
+                $class1 = 'Swordman';
+                $image1 = "images/Swordman.png";
+                $health_point1 = $a['health_point'];
+                $technical_point1 =$a['technical_point'];
+                $attack_point1 = $a['attack_point'];
+                $defense_point1 =$a['defense_point'];
+                $agility_point1 =$a['agility_point'];
+                $karma_point1 =$a['karma_point'];
+            }
         }
         elseif ($_POST['character1'] == 'spearman1') {
-            $class1 = 'Spearman';
-            $image1 = "images/Spearman.png";
-            $health_point1 = 80;
-            $technical_point1 =50;
-            $attack_point1 = 50;
-            $defense_point1 =60;
-            $agility_point1 =80;
-            $karma_point1 =100;
+
+            $health_statement1 = $mysqlConnection->prepare('SELECT * FROM `class_data` WHERE `id`=2');
+            $health_statement1->execute();
+            $a = $health_statement1->fetchAll();
+
+            // On affiche chaque recette une à une
+            foreach ($a as $a) {
+        
+                $class1 = 'Spearman';
+                $image1 = "images/Spearman.png";
+                $health_point1 = $a['health_point'];
+                $technical_point1 =$a['technical_point'];
+                $attack_point1 = $a['attack_point'];
+                $defense_point1 =$a['defense_point'];
+                $agility_point1 =$a['agility_point'];
+                $karma_point1 =$a['karma_point'];
+            }
         }
         elseif ($_POST['character1'] == 'ninja1') {
-            $class1 = 'Ninja';
-            $image1 = "images/Ninja.png";
-            $health_point1 = 80;
-            $technical_point1 =50;
-            $attack_point1 = 50;
-            $defense_point1 =60;
-            $agility_point1 =80;
-            $karma_point1 =100;
+            $health_statement1 = $mysqlConnection->prepare('SELECT * FROM `class_data` WHERE `id`=3');
+            $health_statement1->execute();
+            $a = $health_statement1->fetchAll();
+
+            // On affiche chaque recette une à une
+            foreach ($a as $a) {
+        
+                $class1 = 'Ninja';
+                $image1 = "images/Ninja.png";
+                $health_point1 = $a['health_point'];
+                $technical_point1 =$a['technical_point'];
+                $attack_point1 = $a['attack_point'];
+                $defense_point1 =$a['defense_point'];
+                $agility_point1 =$a['agility_point'];
+                $karma_point1 =$a['karma_point'];
+            }
         }
         elseif ($_POST['character1'] == 'archer1') {
-            $class1 = 'Archer';
-            $image1 = "images/Archer.png";
-            $health_point1 = 80;
-            $technical_point1 =50;
-            $attack_point1 = 50;
-            $defense_point1 =60;
-            $agility_point1 =80;
-            $karma_point1 =100;
+            $health_statement1 = $mysqlConnection->prepare('SELECT * FROM `class_data` WHERE `id`=4');
+            $health_statement1->execute();
+            $a = $health_statement1->fetchAll();
+
+            // On affiche chaque recette une à une
+            foreach ($a as $a) {
+        
+                $class1 = 'Archer';
+                $image1 = "images/Archer.png";
+                $health_point1 = $a['health_point'];
+                $technical_point1 =$a['technical_point'];
+                $attack_point1 = $a['attack_point'];
+                $defense_point1 =$a['defense_point'];
+                $agility_point1 =$a['agility_point'];
+                $karma_point1 =$a['karma_point'];
+            }
         }
         elseif ($_POST['character1'] == 'gunner1') {
-            $class1 = 'Gunner';
-            $image1 = "images/Gunner.png";
-            $health_point1 = 80;
-            $technical_point1 =50;
-            $attack_point1 = 50;
-            $defense_point1 =60;
-            $agility_point1 =80;
-            $karma_point1 =100;
+            $health_statement1 = $mysqlConnection->prepare('SELECT * FROM `class_data` WHERE `id`=5');
+            $health_statement1->execute();
+            $a = $health_statement1->fetchAll();
+
+            // On affiche chaque recette une à une
+            foreach ($a as $a) {
+        
+                $class1 = 'Gunner';
+                $image1 = "images/Gunner.png";
+                $health_point1 = $a['health_point'];
+                $technical_point1 =$a['technical_point'];
+                $attack_point1 = $a['attack_point'];
+                $defense_point1 =$a['defense_point'];
+                $agility_point1 =$a['agility_point'];
+                $karma_point1 =$a['karma_point'];
+            }
         }
         elseif ($_POST['character1'] == 'artificier1') {
-            $class1 = 'Artificier';
-            $image1 = "images/Artificier.png";
-            $health_point1 = 80;
-            $technical_point1 =50;
-            $attack_point1 = 50;
-            $defense_point1 =60;
-            $agility_point1 =80;
-            $karma_point1 =100;
+            $health_statement1 = $mysqlConnection->prepare('SELECT * FROM `class_data` WHERE `id`=6');
+            $health_statement1->execute();
+            $a = $health_statement1->fetchAll();
+
+            // On affiche chaque recette une à une
+            foreach ($a as $a) {
+        
+                $class1 = 'Artificier';
+                $image1 = "images/Artificier.png";
+                $health_point1 = $a['health_point'];
+                $technical_point1 =$a['technical_point'];
+                $attack_point1 = $a['attack_point'];
+                $defense_point1 =$a['defense_point'];
+                $agility_point1 =$a['agility_point'];
+                $karma_point1 =$a['karma_point'];
+            }
         }
         elseif ($_POST['character1'] == 'exorcist1') {
-            $class1 = 'Exorcist';
-            $image1 = "images/Exorcist.png";
-            $health_point1 = 80;
-            $technical_point1 =50;
-            $attack_point1 = 50;
-            $defense_point1 =60;
-            $agility_point1 =80;
-            $karma_point1 =100;
+            $health_statement1 = $mysqlConnection->prepare('SELECT * FROM `class_data` WHERE `id`=7');
+            $health_statement1->execute();
+            $a = $health_statement1->fetchAll();
+
+            // On affiche chaque recette une à une
+            foreach ($a as $a) {
+        
+                $class1 = 'Exorcist';
+                $image1 = "images/Exorcist.png";
+                $health_point1 = $a['health_point'];
+                $technical_point1 =$a['technical_point'];
+                $attack_point1 = $a['attack_point'];
+                $defense_point1 =$a['defense_point'];
+                $agility_point1 =$a['agility_point'];
+                $karma_point1 =$a['karma_point'];
+            }
         }
 
 
         if ($_POST['character2'] == 'swordman2') {
-            $class2 = 'Swordman';
-            $image2 = "images/Swordman.png";
-            $health_point2 = 80;
-            $technical_point2 =50;
-            $attack_point2 = 50;
-            $defense_point2 =60;
-            $agility_point2 =80;
-            $karma_point2 =30;
+
+            $health_statement2 = $mysqlConnection->prepare('SELECT * FROM `class_data` WHERE `id`=1');
+            $health_statement2->execute();
+            $b = $health_statement2->fetchAll();
+
+            // On affiche chaque recette une à une
+            foreach ($b as $b) {
+        
+                $class2 = 'Swordman';
+                $image2 = "images/Swordman.png";
+                $health_point2 = $b['health_point'];
+                $technical_point2 =$b['technical_point'];
+                $attack_point2 = $b['attack_point'];
+                $defense_point2 =$b['defense_point'];
+                $agility_point2 =$b['agility_point'];
+                $karma_point2 =$b['karma_point'];
+            }
+            
         }
         elseif ($_POST['character2'] == 'spearman2') {
-            $class2 = 'Spearman';
-            $image2 = "images/Spearman.png";
-            $health_point2 = 80;
-            $technical_point2 =50;
-            $attack_point2 = 50;
-            $defense_point2 =60;
-            $agility_point2 =80;
-            $karma_point2 =50;
+            $health_statement2 = $mysqlConnection->prepare('SELECT * FROM `class_data` WHERE `id`=2');
+            $health_statement2->execute();
+            $b = $health_statement2->fetchAll();
+
+            // On affiche chaque recette une à une
+            foreach ($b as $b) {
+        
+                $class2 = 'Spearman';
+                $image2 = "images/Spearman.png";
+                $health_point2 = $b['health_point'];
+                $technical_point2 =$b['technical_point'];
+                $attack_point2 = $b['attack_point'];
+                $defense_point2 =$b['defense_point'];
+                $agility_point2 =$b['agility_point'];
+                $karma_point2 =$b['karma_point'];
+            }
         }
         elseif ($_POST['character2'] == 'ninja2') {
-            $class2 = 'Ninja';
-            $image2 = "images/Ninja.png";
-            $health_point2 = 80;
-            $technical_point2 =50;
-            $attack_point2 = 50;
-            $defense_point2 =60;
-            $agility_point2 =80;
-            $karma_point2 =40;
+            $health_statement2 = $mysqlConnection->prepare('SELECT * FROM `class_data` WHERE `id`=3');
+            $health_statement2->execute();
+            $b = $health_statement2->fetchAll();
+
+            // On affiche chaque recette une à une
+            foreach ($b as $b) {
+        
+                $class2 = 'Ninja';
+                $image2 = "images/Ninja.png";
+                $health_point2 = $b['health_point'];
+                $technical_point2 =$b['technical_point'];
+                $attack_point2 = $b['attack_point'];
+                $defense_point2 =$b['defense_point'];
+                $agility_point2 =$b['agility_point'];
+                $karma_point2 =$b['karma_point'];
+            }
         }
         elseif ($_POST['character2'] == 'archer2') {
-            $class2 = 'Archer';
-            $image2 = "images/Archer.png";
-            $health_point2 = 80;
-            $technical_point2 =50;
-            $attack_point2 = 50;
-            $defense_point2 =60;
-            $agility_point2 =80;
-            $karma_point2 =20;
+            $health_statement2 = $mysqlConnection->prepare('SELECT * FROM `class_data` WHERE `id`=4');
+            $health_statement2->execute();
+            $b = $health_statement2->fetchAll();
+
+            // On affiche chaque recette une à une
+            foreach ($b as $b) {
+        
+                $class2 = 'Archer';
+                $image2 = "images/Archer.png";
+                $health_point2 = $b['health_point'];
+                $technical_point2 =$b['technical_point'];
+                $attack_point2 = $b['attack_point'];
+                $defense_point2 =$b['defense_point'];
+                $agility_point2 =$b['agility_point'];
+                $karma_point2 =$b['karma_point'];
+            }
         }
         elseif ($_POST['character2'] == 'gunner2') {
-            $class2 = 'Gunner';
-            $image2 = "images/Gunner.png";
-            $health_point2 = 80;
-            $technical_point2 =50;
-            $attack_point2 = 50;
-            $defense_point2 =60;
-            $agility_point2 =80;
-            $karma_point2 =20;
+            $health_statement2 = $mysqlConnection->prepare('SELECT * FROM `class_data` WHERE `id`=5');
+            $health_statement2->execute();
+            $b = $health_statement2->fetchAll();
+
+            // On affiche chaque recette une à une
+            foreach ($b as $b) {
+        
+                $class2 = 'Gunner';
+                $image2 = "images/Gunner.png";
+                $health_point2 = $b['health_point'];
+                $technical_point2 =$b['technical_point'];
+                $attack_point2 = $b['attack_point'];
+                $defense_point2 =$b['defense_point'];
+                $agility_point2 =$b['agility_point'];
+                $karma_point2 =$b['karma_point'];
+            }
         }
         elseif ($_POST['character2'] == 'artificier2') {
-            $class2 = 'Artificier';
-            $image2 = "images/Artificier.png";
-            $health_point2 = 80;
-            $technical_point2 =50;
-            $attack_point2 = 50;
-            $defense_point2 =60;
-            $agility_point2 =80;
-            $karma_point2 =100;
+            $health_statement2 = $mysqlConnection->prepare('SELECT * FROM `class_data` WHERE `id`=6');
+            $health_statement2->execute();
+            $b = $health_statement2->fetchAll();
+
+            // On affiche chaque recette une à une
+            foreach ($b as $b) {
+        
+                $class2 = 'Artificier';
+                $image2 = "images/Artificier.png";
+                $health_point2 = $b['health_point'];
+                $technical_point2 =$b['technical_point'];
+                $attack_point2 = $b['attack_point'];
+                $defense_point2 =$b['defense_point'];
+                $agility_point2 =$b['agility_point'];
+                $karma_point2 =$b['karma_point'];
+            }
         }
         elseif ($_POST['character2'] == 'exorcist2') {
-            $class2 = 'Exorcist';
-            $image2 = "images/Exorcist.png";
-            $health_point2 = 80;
-            $technical_point2 =50;
-            $attack_point2 = 50;
-            $defense_point2 =60;
-            $agility_point2 =80;
-            $karma_point2 =100;
+            $health_statement2 = $mysqlConnection->prepare('SELECT * FROM `class_data` WHERE `id`=7');
+            $health_statement2->execute();
+            $b = $health_statement2->fetchAll();
+
+            // On affiche chaque recette une à une
+            foreach ($b as $b) {
+        
+                $class2 = 'Exorcist';
+                $image2 = "images/Exorcist.png";
+                $health_point2 = $b['health_point'];
+                $technical_point2 =$b['technical_point'];
+                $attack_point2 = $b['attack_point'];
+                $defense_point2 =$b['defense_point'];
+                $agility_point2 =$b['agility_point'];
+                $karma_point2 =$b['karma_point'];
+            }
         }
     ?>
 
