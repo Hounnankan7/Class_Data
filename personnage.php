@@ -57,7 +57,7 @@
 
                 </p>
             </div>
-            <p><input type="submit" value="Compare" /></p>
+            <p><input type="submit" value="Compare Stats" /></p>
         </form>
     
 
