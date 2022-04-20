@@ -1,5 +1,5 @@
 # Class_Data
- Just me messing around with HTML, CSS, PHP, MySQL (Database created) and Chart.js for graph display based on some random Data for an RPG game.
+ Just me messing around with HTML, CSS, PHP, MySQL (Database created using interface of phpMyAdmin) and Chart.js for graph display based on some random Data for an RPG game.
  
 ### Some pics to describe it
 - Choose two class to compare their stats
